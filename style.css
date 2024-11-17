@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rounded-size: 24px;
+}
+
+a {text-decoration: none; color: #212121;}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #212121;
+    background-color: #fff;
+    padding-bottom: 10rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #608BC1;
+}
+
+.nav-menu {
+    display: flex;
+    gap: .5rem;
+}
+
+.nav-link {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+:is(.nav-link.active, .nav-link.active:hover) {
+    background-color: #608BC1;
+    color: #fff;
+}
+
+.nav-link:hover {
+    background-color: #f1f1f1;
+}
+
+section {
+    padding: 2rem 4rem;
+}
+
+#banner {
+    margin-top: 4rem;
+}
+
+#banner .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+    color: #608BC1;
+    font-weight: bold;
+}
+
+#banner > p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(112, 139, 172, 0.8);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+.card {
+    max-width: 100%;
+}
+
+.card-image {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: var(--rounded-size);
+}
+
+.card-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    position: relative;
+    padding: 1.5rem;
+}
+
+.card-body::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #f1f1f1; 
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.card-body:is(.quote, .author-label) {
+    color: rgba(33, 33, 33, .7);
+    font-size: 1.2rem;
+}
+
+.card-body .quote {margin-bottom: 1.5rem;}
+.card-body .author-name { font-size: 1rem;}
+.card-body .author-label {
+    font-size: .8rem;
+    color: rgba(33, 33, 33, .5);
+    margin-top: .3rem;
+}
+
+.author {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.author .profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-position: center;
+}
+
+
+#contact {
+    width: 500px;
+    background: #608BC1;
+    border-radius: var(--rounded-size);
+    color: #fff;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contact label {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+label[for="fullname"] {
+    margin-top: 1.5rem;
+}
+
+#contact .form-title {
+    font-size: 1.5rem;
+}
+
+#contact input {
+    padding: 18px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    outline: 2px dashed rgba(255, 255, 255, .5);
+    color: #fff;
+}
+
+#contact input:hover {
+    outline-color: #fff;
+}
+
+#contact input::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+#preferences {
+    width: 100%;
+    background-color: red;
+}
+
+.feature-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.feature-details h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: #133E87;
+    font-weight: 500;
+}
+
+ol {
+    counter-reset: section;
+    list-style: none;
+    padding-right: 1rem;
+}
+
+ol li {
+    margin-bottom: 1rem;
+    color: #212121;
+}
+
+ol li::before {
+    content: counter(section);
+    counter-increment: section;
+    display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-color: #608BC1;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+#packages {
+    margin-top: 2rem;
+}
+
+#packages .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.package {
+    display: flex;
+    background-color: #f1f1f1;
+    border-radius: 16px;
+    padding: 1rem;
+    gap: 1rem;
+    transition: all .5s ease;
+}
+
+.package:hover {
+    color: #fff;
+    background-color: #4A628A;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #4A628A;
+}
+
+.package-description p {
+    margin-top: .5rem;
+}
